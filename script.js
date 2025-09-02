@@ -43,3 +43,21 @@ matchMedia('(prefers-color-scheme: dark)').matches)) {
         localStorage.theme = 'light';
     }
   }
+  
+
+   function showMoreCard() {
+    const uiuxCard = document.getElementById('hidden-uiux-card');
+    const btn = document.getElementById('showMoreBtn');
+
+    if (uiuxCard.classList.contains('hidden')) {
+      uiuxCard.classList.remove('hidden');
+      btn.innerHTML = `Show Less
+        <img src="./img/right-arrow-bold.png" alt="" class="w-4 rotate-180 dark:hidden">
+        <img src="./img/right-arrow-bold-dark.png" alt="" class="w-4 rotate-180 hidden dark:block">`;
+    } else {
+      uiuxCard.classList.add('hidden');
+      btn.innerHTML = `Show More
+        <img src="./img/right-arrow-bold.png" alt="" class="w-4 dark:hidden">
+        <img src="./img/right-arrow-bold-dark.png" alt="" class="w-4 hidden dark:block">`;
+    }
+  }
